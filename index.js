@@ -62,6 +62,6 @@ bot.on('message', function (event) {
 
 // Bot 所監聽的 webhook 路徑與 port，heroku 會動態存取 port 所以不能用固定的 port，沒有的話用預設的 port 5000
 bot.listen('/', process.env.PORT || 5000, function () {
-    const port = server.address().port;
-    console.log('前端小幫手上線啦！！', port);
+    // const port = bot.address().port;
+    console.log('前端小幫手上線啦！！', bot);
 });
