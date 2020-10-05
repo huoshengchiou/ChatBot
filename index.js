@@ -21,9 +21,6 @@ let bot = linebot({
 
 const token = 'DO8nAW3G4XSbMzmzflnh68fY1VVIcNLMtJ24nl1XYq28PFnTYV6tPp1qS8vrn9CECSI9034it8tc3gXQI4Upn1Zx/qwwAfCqmwpBcuK0KZtx8n1g5mU/rRhbwAXCuEVg8wDHUVMY/R+GqXBgU9XtugdB04t89/1O/w1cDnyilFU='
 
-
-
-//TODO環境參數調整
 // 當有人傳送訊息給Bot時
 bot.on('message', function (event) {
     // 約定字串
@@ -34,7 +31,7 @@ bot.on('message', function (event) {
     const reverse = /[^(F|f)t\s]/
     const digestMsg = message.text.replace(reg, '')
     // convert id to name
-    fetch(`https://api.line.me/v2/bot/profile/${source.userId}`, { headers: { 'Authorization': `Bearer ${token}` } })
+    fetch(`https://api.line.me/v2/bot/profile/${source.userId}`, { headers: { 'Authorization': `Bearer ${process.env.LINE_ACCESS_TOKEN}` } })
         .then(res => res.json())
         .then(body => {
             const { displayName } = body
@@ -65,5 +62,6 @@ bot.on('message', function (event) {
 
 // Bot 所監聽的 webhook 路徑與 port，heroku 會動態存取 port 所以不能用固定的 port，沒有的話用預設的 port 5000
 bot.listen('/', process.env.PORT || 5000, function () {
-    console.log('前端小幫手上線啦！！');
+    const port = server.address().port;
+    console.log('前端小幫手上線啦！！', port);
 });
