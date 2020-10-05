@@ -1,0 +1,22 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huoshengchiou/ChatBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huoshengchiou/ChatBot/issues"
+  },
+  "homepage": "https://github.com/huoshengchiou/ChatBot#readme",
+  "dependencies": {
+    "linebot": "^1.6.0"
+  }
+}
