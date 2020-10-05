@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/huoshengchiou/ChatBot#readme",
   "dependencies": {
+    "@line/bot-sdk": "^7.1.0",
     "linebot": "^1.6.0"
   }
 }

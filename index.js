@@ -5,7 +5,7 @@ let linebot = require('linebot');
 let bot = linebot({
     channelId: process.env.LINE_CH_ID,
     channelSecret: process.env.LINE_CH_SECRET,
-    channelAccessToken: process.env.LINE_U_ID
+    channelAccessToken: process.env.LINE_ACCESS_TOKEN
 });
 
 // 當有人傳送訊息給Bot時
